@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Floating Popup Extension",
+  "version": "1.0",
+  "description": "Injects a floating popup inside webpages.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Click to inject popup"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
